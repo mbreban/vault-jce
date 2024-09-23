@@ -119,6 +119,20 @@ apksigner sign \
   app.apk
 ```
 
+## Docker image
+
+### Build docker image
+
+```sh
+make package
+```
+
+### Sign an application
+
+```sh
+docker run --network=host -v $PWD:$PWD -w $PWD -e VAULT_ADDR=$VAULT_ADDR -e VAULT_TOKEN=$VAULT_TOKEN vault-jce:local apksigner sign ...
+```
+
 ### Verify
 
 ```sh
